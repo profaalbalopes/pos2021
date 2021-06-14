@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Qual o feitiço para acender a luz?</h3>
+    Resposta: <input type="text" id="resposta"/><br/>
+    <button type="button" onclick="verificar()">Responder</button><br/>
+    
+    <script>
+        function verificar(){
+            var r = document.getElementById("resposta").value;
+            if (r == "lumus"){
+                document.write("Parabéns, você acertou!");
+                document.body.style.backgroundColor="yellow";
+            }else{
+                document.write("Que pena, você errou!");
+                document.body.style.backgroundColor="gray";
+            }
+        }
+
+    </script>
+</body>
+</html>

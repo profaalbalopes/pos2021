@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var compras = [];
+
+        function adicionarItem(){
+            var item = document.getElementById("item").value;
+            compras.push(item);
+            alert("Novo item adicionado à lista");
+            document.getElementById("item").value = "";
+            verLista();
+        }
+
+        function verLista(){
+            var itensnalista = "";
+            for (i=0; i<compras.length; i++){
+                itensnalista +=  "<li>"+compras[i]+"</li>";
+            }
+            document.getElementById("lista").innerHTML = itensnalista;
+        }
+
+        function encontrarNaLista(){
+            var pesquisar = document.getElementById("pesquisar").value;
+            var achou = false;
+            for (i=0; i<compras.length; i++){
+                if (pesquisar == compras[i]){
+                    achou = true;
+                    break;
+                }
+            }
+            if (achou){
+                alert("O item está na lista");
+            }else{
+                alert("O item não está na lista");
+            }
+        }
+
+        function encontrarNaListaComIndexOf(){
+            var pesquisar = document.getElementById("pesquisar").value;
+            if (compras.indexOf(pesquisar) > -1){
+                alert("O item está na lista");
+            }else{
+                alert("O item não está na lista");
+            }
+            
+        }
+    </script>
+
+    Novo item: <input type="text" id="item">
+    <button type="button" onclick="adicionarItem()">Adicionar</button>
+    
+    <br/>
+    Pesquisar: <input type="text" id="pesquisar">
+    <img src="lupa.png" width="20" height="20" onclick="encontrarNaListaComIndexOf()"/>
+
+    <ul id="lista">
+    </ul>
+
+</body>
+</html>
