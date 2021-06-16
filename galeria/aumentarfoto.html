@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+
+    <script>
+        
+        function aumentar(foto){
+            foto.classList.remove("pequeno");
+            foto.classList.add("grande");
+        }
+
+        function reduzir(foto){
+            foto.classList.remove("grande");
+            foto.classList.add("pequeno");
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <img src="flor01.jpg" class="pequeno" onmouseover="aumentar(this)" onmouseout="reduzir(this)">
+        <img src="flor02.jpg" class="pequeno" onmouseover="aumentar(this)" onmouseout="reduzir(this)">
+        <img src="flor03.jpg" class="pequeno" onmouseover="aumentar(this)" onmouseout="reduzir(this)">
+    </div>
+</body>
+</html>

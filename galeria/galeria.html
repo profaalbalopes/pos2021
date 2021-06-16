@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+
+    <script>
+        function galeria(){
+            var fotos = ["flor01.jpg", "flor02.jpg", "flor03.jpg", "flor04.jpg", "flor05.jpg"];
+
+            var minhadiv = document.querySelector("div");
+            for (i=0; i<fotos.length; i++){
+                var flor = document.createElement("img");
+                flor.src=fotos[i];
+                flor.classList.add("pequeno");
+                minhadiv.appendChild(flor);
+            }
+        }
+
+        function aumentar(){
+            var fotos = document.querySelectorAll(".pequeno");
+            if (fotos.length > 0){
+                for (i=0; i<fotos.length; i++){
+                    fotos[i].classList.add("medio");
+                    fotos[i].classList.remove("pequeno");
+                }
+            }else{
+                var fotos = document.querySelectorAll(".medio");
+                for (i=0; i<fotos.length; i++){
+                    fotos[i].classList.add("grande");
+                    fotos[i].classList.remove("medio");
+                }
+            }
+        }
+
+        function reduzir(){
+            var fotos = document.querySelectorAll(".grande");
+            if (fotos.length > 0){
+                for (i=0; i<fotos.length; i++){
+                    fotos[i].classList.add("medio");
+                    fotos[i].classList.remove("grande");
+                }
+            }else{
+                var fotos = document.querySelectorAll(".medio");
+                for (i=0; i<fotos.length; i++){
+                    fotos[i].classList.add("pequeno");
+                    fotos[i].classList.remove("medio");
+                }
+            }
+        }
+    </script>
+
+</head>
+<body onload="galeria()">
+    <p>Galeria de Imagens
+        <img src="zoomin.png" class="icone" onclick="aumentar()"/>
+        <img src="zoomout.png" class="icone" onclick="reduzir()"/>
+    </p>
+    <div>
+
+    </div>
+</body>
+</html>
