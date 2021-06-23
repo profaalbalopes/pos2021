@@ -18,7 +18,7 @@ function iniciarMapa(){
     
 
     //locationButton.classList.add("custom-map-control-button");
-    
+     
 }
 
 function mudarCoordenadas(){
