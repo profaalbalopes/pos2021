@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #map{
+            width: 800px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    Latidude: <input type="text" id="latitude"><br/>
+    Longitude: <input type="text" id="longitude"><br/>
+    <button type="button" onclick="aumentarZoom()">+</button>
+    <button type="button" onclick="diminuirZoom()">-</button>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC93fZkYBO_j5_wgZK9bypcBqJbkiplw1M&callback=iniciarMapa" async defer>
+    </script>
+    <script src="usandoapimap.js"></script>
+    
+</body>
+</html>
